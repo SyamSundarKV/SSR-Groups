@@ -241,6 +241,17 @@ body.mobile-nav-active #mobile-nav-toggle {
         padding-right: 60px;
     }
 }
+@media (max-width: 1104px) {
+    #nav-menu-container {
+        
+        display: none;
+       
+    }
+
+    #mobile-nav-toggle {
+        display: inline;
+    }
+}
 
 @media (max-width: 900px) {
     #nav-menu-container {
