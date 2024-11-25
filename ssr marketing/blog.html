@@ -1,0 +1,2510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Blog</title>
+ 
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="img/fevicon.svg" type="image/svg+xml">
+
+  
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+/**
+ * colors
+ */
+
+--eerie-black_80: hsla(225, 9%, 9%, 0.8);
+--eerie-black_60: hsla(225, 9%, 9%, 0.6);
+--eerie-black: hsl(225, 9%, 9%);
+--light-gray-1: hsl(0, 0%, 80%);
+--light-gray-2: hsl(240, 2%, 81%);
+--gainsboro: hsl(240, 9%, 91%);
+--cultured: hsl(300, 8%, 95%);
+--blue-ryb: hsl(232, 100%, 60%);
+--white_20: hsla(0, 0%, 100%, 0.2);
+--white: hsl(0, 0%, 100%);
+
+/**
+ * typography
+ */
+
+--ff-inter: 'Inter', sans-serif;
+
+--fs-1: 3.6rem;
+--fs-2: 3.2rem;
+--fs-3: 2.4rem;
+--fs-4: 2.2rem;
+--fs-5: 2rem;
+--fs-6: 1.8rem;
+--fs-7: 1.5rem;
+--fs-8: 1.4rem;
+--fs-9: 1.3rem;
+
+--fw-700: 700;
+--fw-500: 500;
+--fw-300: 300;
+
+/**
+ * spacing
+ */
+
+--section-padding: 50px;
+
+/**
+ * radius
+ */
+
+--radius-16: 16px;
+--radius-pill: 200px;
+--radius-circle: 50%;
+
+/**
+ * transition
+ */
+
+--transition-1: 0.25s ease;
+--transition-2: 0.5s ease;
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+#RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a,
+img,
+span,
+input,
+button,
+ion-icon { display: block; }
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img { height: auto; }
+
+input,
+button {
+background: none;
+border: none;
+font: inherit;
+}
+
+input {
+width: 100%;
+outline: none;
+}
+
+button { cursor: pointer; }
+
+ion-icon { pointer-events: none; }
+
+html {
+font-family: var(--ff-inter);
+font-size: 10px;
+scroll-behavior: smooth;
+}
+
+body {
+background-color: var(--white);
+color: var(--eerie-black);
+font-size: 1.6rem;
+line-height: 1.5;
+
+}
+
+body.active { overflow: hidden; }
+
+:focus-visible { outline-offset: 4px; }
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+
+::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+
+::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+
+
+
+
+
+/*-----------------------------------*\
+#REUSED STYLE
+\*-----------------------------------*/
+
+.section { margin-inline: 15px; }
+
+.hover\:underline { text-underline-offset: 3px; }
+
+.hover\:underline:is(:hover, :focus) { text-decoration: underline; }
+
+.section:not(.header, .footer-bottom) {
+padding-block-end: var(--section-padding);
+border-block-end: 1px solid var(--light-gray-2);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 { line-height: 1.2; }
+
+.h1,
+.h2 { font-weight: var(--fw-300); }
+
+.h1 { font-size: var(--fs-1); }
+
+.h2 { font-size: var(--fs-2); }
+
+.h3 { font-size: var(--fs-3); }
+
+.h4 { font-size: var(--fs-4); }
+
+.h5 { font-size: var(--fs-6); }
+
+.newsletter-form {
+position: relative;
+max-width: 400px;
+}
+
+.newsletter-form .email-field {
+background-color: var(--cultured);
+color: inherit;
+padding: 14px 20px;
+padding-inline-end: 140px;
+border-radius: var(--radius-pill);
+}
+
+.newsletter-form .email-field:focus { background-color: var(--gainsboro); }
+
+.newsletter-form .email-field::placeholder { color: var(--eerie-black_60); }
+
+.newsletter-form .btn {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+}
+
+.btn {
+background-color: var(--eerie-black);
+color: var(--white);
+font-size: var(--fs-6);
+font-weight: var(--fw-500);
+line-height: 1.3;
+padding: 11px 25px;
+border-radius: var(--radius-pill);
+transition: var(--transition-1);
+}
+
+.btn:is(:hover, :focus) { background-color: var(--blue-ryb); }
+
+.section-subtitle { padding-block: 15px; }
+
+.img-holder {
+aspect-ratio: var(--width) / var(--height);
+background-color: var(--light-gray-1);
+overflow: hidden;
+}
+
+.img-cover {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: all 0.3s ease-out;
+} 
+
+.img-cover:hover {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transform: scale(1.05);
+
+} 
+
+.has-scrollbar {
+display: flex;
+gap: 10px;
+overflow-x: auto;
+scroll-snap-type: inline mandatory;
+padding-block-end: 20px;
+margin-block-end: -20px;
+margin-inline: -15px;
+padding-inline: 15px;
+}
+
+.has-scrollbar::-webkit-scrollbar { height: 10px; }
+
+.has-scrollbar::-webkit-scrollbar-track { background: transparent; }
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+background-color: transparent;
+border-radius: var(--radius-pill);
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 10px; }
+
+.has-scrollbar:is(:hover, :focus-within)::-webkit-scrollbar-thumb { background-color: var(--light-gray-1); }
+
+.scrollbar-item {
+min-width: 70%;
+scroll-snap-align: center;
+}
+
+.blog-card .card-banner {
+position: relative;
+border-radius: var(--radius-16);
+margin-block-end: 15px;
+}
+
+.avatar-list {
+display: flex;
+flex-direction: row-reverse;
+}
+
+.avatar-list.absolute {
+position: absolute;
+bottom: 10px;
+left: 10px;
+}
+
+.avatar-item:not(:first-child) { margin-inline-end: -15px; }
+
+.avatar {
+width: 40px;
+border-radius: var(--radius-circle);
+background: none;
+border: 5px solid var(--white_20);
+transition: var(--transition-1);
+will-change: transform;
+}
+
+.avatar-list.absolute .avatar:is(:hover, :focus) {
+transform: scale(0.9);
+border-color: var(--white);
+}
+
+.card-meta-list {
+display: flex;
+gap: 5px;
+}
+
+.card-tag {
+background-color: var(--cultured);
+font-size: var(--fs-9);
+font-weight: var(--fw-500);
+padding: 2px 8px;
+border-radius: var(--radius-pill);
+transition: var(--transition-1);
+}
+
+.card-tag:is(:hover, :focus) { background-color: var(--gainsboro); }
+
+.blog-card .card-title {
+margin-block: 8px 12px;
+text-decoration-thickness: 2px;
+}
+
+.blog-card .card-text {
+font-size: var(--fs-8);
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 8;
+overflow: hidden;
+padding-inline-end: 20px;
+}
+
+.grid-list {
+display: grid;
+gap: 30px;
+}
+
+
+
+.button {
+    appearance: none;
+    border: none;
+    outline: none;
+
+    display: inline-block;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin: 0px 15px;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    transform: scale(1.08);
+    background-color: #536e8c;
+}
+
+.button.large {
+    font-size: 24px;
+    padding: 15px 30px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+.popup.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    max-height: 70vh; 
+    overflow-y: auto; 
+    padding: 50px 30px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 16px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.popup h2 {
+    color: whitesmoke;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.popup h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    color: wheat;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.popup p:last-of-type {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#HEADER
+\*-----------------------------------*/
+
+.search-btn .span,
+.header .btn { display: none; }
+
+.header {
+position: relative;
+padding-block: 25px;
+
+}
+
+.header .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav__logo {
+display: flex;
+align-items: center;
+gap: 1.0rem;
+font-size: 3.5rem;
+font-weight: 700;
+color: black;
+}
+
+.nav__logo div {
+width: 60px;
+aspect-ratio: 1;
+display: grid;
+place-content: center;
+font-size: 35px;
+line-height: 1rem;
+color: rgb(167, 167, 237);
+background-color: white;
+border-radius: 100%;
+}
+
+.header .wrapper {
+display: flex;
+gap: 15px;
+}
+
+.search-btn { font-size: 28px; }
+
+.search-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+.nav-toggle-btn .span {
+background-color: var(--eerie-black);
+width: 30px;
+height: 3px;
+transition: var(--transition-1);
+}
+
+.nav-toggle-btn .span:not(:last-child) { margin-block-end: 7px; }
+
+.nav-toggle-btn.active .span.two { opacity: 0; }
+
+.nav-toggle-btn.active .span.one { transform: translateY(10px) rotate(45deg); }
+
+.nav-toggle-btn.active .span.three { transform: translateY(-10px) rotate(-45deg); }
+
+.navbar {
+background-color: var(--eerie-black);
+color: var(--white);
+position: absolute;
+top: calc(100% - 20px);
+right: 0;
+min-width: 180px;
+padding: 15px 10px;
+border-radius: var(--radius-16);
+transform: translateY(10px);
+opacity: 0;
+visibility: hidden;
+transition: var(--transition-1);
+z-index: 2;
+}
+
+.navbar.active {
+transform: translateY(0);
+opacity: 1;
+visibility: visible;
+}
+
+.navbar-link {
+text-align: right;
+font-size: var(--fs-6);
+font-weight: var(--fw-500);
+padding: 5px;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#SEARCH BAR
+\*-----------------------------------*/
+
+.search-bar {
+background-color: var(--white);
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding: 15px;
+transform: translateY(calc(-100% - 2px));
+z-index: 4;
+transition: var(--transition-1);
+visibility: hidden;
+}
+
+.search-bar.active {
+visibility: visible;
+transform: translateY(0);
+}
+
+.search-bar .input-field {
+font-size: var(--fs-1);
+font-weight: var(--fw-700);
+line-height: 1.3;
+padding-inline-end: 60px;
+}
+
+.search-bar .input-field::placeholder { color: var(--eerie-black); }
+
+.search-bar .input-field::-webkit-search-cancel-button { display: none; }
+
+.search-close-btn {
+position: absolute;
+top: 50%;
+right: 20px;
+transform: translateY(-50%);
+font-size: 45px;
+}
+
+.search-close-btn ion-icon { --ionicon-stroke-width: 20px; }
+
+.search-bar-text {
+font-size: 1.4rem;
+color: var(--eerie-black_80);
+margin-block-start: 5px;
+}
+
+.overlay {
+position: fixed;
+inset: 0;
+background-color: var(--eerie-black_80);
+transition: var(--transition-1);
+opacity: 0;
+pointer-events: none;
+z-index: 3;
+}
+
+.overlay.active {
+opacity: 1;
+pointer-events: all;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#HERO
+\*-----------------------------------*/
+
+
+
+.hero { padding-block-start: 10px; }
+
+.hero-title { margin-block-end: 25px; }
+
+
+
+
+
+/*-----------------------------------*\
+#RECENT POST
+\*-----------------------------------*/
+
+.top-author { display: none; }
+
+.recent { padding-block-start: 15px; }
+
+.recent .section-title .strong { display: block; }
+
+.recent .section-title { margin-block-end: 20px; }
+
+.recent .btn {
+margin-inline: auto;
+margin-block: 50px 30px;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#RECOMMENDED POST
+\*-----------------------------------*/
+
+.section.recommended { border-block-end: none; }
+
+.recommended .grid-list {
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+}
+
+.recommended .blog-card { margin-block-end: 5px; }
+
+
+
+
+
+/*-----------------------------------*\
+#NEWSLETTER
+\*-----------------------------------*/
+
+.newsletter { padding-block-start: 40px; }
+
+.newsletter .section-title { margin-block-end: 25px; }
+
+
+
+
+
+/*-----------------------------------*\
+#FOOTER
+\*-----------------------------------*/
+
+.footer { padding-block: 40px 20px; }
+
+.section.footer-top { border-block-end: none; }
+
+.footer-top {
+display: grid;
+gap: 25px;
+}
+
+.nav__logo {
+display: flex;
+align-items: center;
+gap: 1.0rem;
+font-size: 3.5rem;
+font-weight: 700;
+color: black;
+}
+
+.nav__logo div {
+width: 60px;
+aspect-ratio: 1;
+display: grid;
+place-content: center;
+font-size: 35px;
+line-height: 1rem;
+color: rgb(167, 167, 237);
+background-color: white;
+border-radius: 100%;
+}
+
+
+
+
+.footer-text {
+font-size: 15px;
+font-weight: var(--fw-500);
+line-height: 1.4;
+}
+
+.footer-list .h5 {
+font-weight: var(--fw-700);
+margin-block-end: 15px;
+}
+
+.footer-list-item {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.footer-list-item ion-icon {
+font-size: 18px;
+flex-shrink: 0;
+}
+
+.footer-link {
+font-size: var(--fs-7);
+font-weight: var(--fw-500);
+margin-block-start: 8px;
+}
+
+.copyright {
+font-size: var(--fs-8);
+margin-block-start: 25px;
+}
+
+.copyright-link { display: inline-block; }
+
+
+
+
+
+/*-----------------------------------*\
+#MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+* responsive for large than 575px screen
+*/
+
+@media (min-width: 575px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 6rem;
+  --fs-2: 4.8rem;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.section { margin-inline: 30px; }
+
+.newsletter-form,
+.btn { --fs-6: 2.2rem; }
+
+.newsletter-form .email-field {
+  font-size: var(--fs-6);
+  padding-inline-end: 170px;
+}
+
+.btn { padding: 14px 30px; }
+
+.section-subtitle { font-size: var(--fs-6); }
+
+.has-scrollbar {
+  margin-inline: -30px;
+  padding-inline: 30px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 15px; }
+
+.scrollbar-item { min-width: 40%; }
+
+.grid-list {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+
+
+/**
+ * HEADER
+ */
+
+.header { padding-block: 30px; }
+
+
+
+/**
+ * SEARCH BAR
+ */
+
+.search-bar .input-field { --fs-1: 3.6rem; }
+
+
+
+/**
+ * RECOMMENDED POST, FOOTER
+ */
+
+.recommended .grid-list,
+.footer-top { grid-template-columns: repeat(3, 1fr); }
+
+.footer-brand { grid-column: 1 / 4; }
+
+.footer-text {
+  max-width: 400px;
+  margin-block-end: 20px;
+}
+
+}
+
+
+
+
+
+/**
+* responsive for large than 768px screen
+*/
+
+@media (min-width: 768px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 7.2rem;
+  --fs-2: 5.5rem;
+
+  /**
+   * radius
+   */
+
+  --radius-16: 26px;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.section { margin-inline: 50px; }
+
+.has-scrollbar {
+  margin-inline: -50px;
+  padding-inline: 50px;
+  gap: 15px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 25px; }
+
+.scrollbar-item { min-width: 30%; }
+
+.grid-list { gap: 40px 15px; }
+
+
+
+/**
+ * SEARCH BAR
+ */
+
+.search-bar { padding: 25px; }
+
+.search-bar .input-field { --fs-1: 4.6rem; }
+
+
+
+/**
+ * RECENT POST
+ */
+
+.top-author {
+  display: block;
+  text-align: right;
+}
+
+.recent .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 10px;
+}
+
+.top-author .avatar-item:not(:first-child) { margin-inline-end: -25px; }
+
+.top-author .span {
+  color: var(--eerie-black_80);
+  font-size: var(--fs-8);
+  margin-block-start: 10px;
+}
+
+.avatar.large {
+  border: 6px solid var(--white);
+  width: 70px;
+}
+
+.avatar.large:is(:hover, :focus) { transform: translateY(-3px); }
+
+
+
+/**
+ * RECOMMENDED POST
+ */
+
+.recommended .grid-list {
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+}
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer-top { grid-template-columns: repeat(4, 1fr); }
+
+.footer-brand { grid-column: 1 / 5; }
+
+.footer-link { --fs-7: 1.7rem; }
+
+}
+
+
+
+
+
+/**
+* responsive for large than 992px screen
+*/
+
+@media (min-width: 992px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 8.8rem;
+  
+  /**
+   * spacing
+   */
+
+  --section-padding: 60px;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.section { margin-inline: 60px; }
+
+.has-scrollbar {
+  margin-inline: -60px;
+  padding-inline: 60px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 30px; }
+
+.btn {
+  --fs-6: 2.4rem;
+  padding: 18px 36px;
+}
+
+.newsletter-form { max-width: 450px; }
+
+.newsletter-form .email-field {
+  padding-block: 18px;
+  padding-inline-start: 30px;
+}
+
+.blog-card .card-title { padding-inline-end: 15px; }
+
+.blog-card .card-text { font-size: unset; }
+
+.grid-list { grid-template-columns: repeat(3, 1fr); }
+
+
+
+/**
+ * HEADER
+ */
+
+.nav-toggle-btn { display: none; }
+
+.search-btn .span,
+.header .btn { display: block; }
+
+.header .wrapper { gap: 10px; }
+
+.search-btn,
+.header .btn {
+  --fs-6: 1.8rem;
+  padding: 6px 20px;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--cultured);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  border-radius: var(--radius-pill);
+  transition: var(--transition-1);
+}
+
+.search-btn:is(:hover, :focus) { background-color: var(--gainsboro); }
+
+.navbar,
+.navbar.active {
+  all: unset;
+  margin-inline: auto 12px;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 8px;
+}
+
+
+
+/**
+ * HERO
+ */
+
+.hero { padding-block-start: 25px; }
+
+.hero-title { margin-block-end: 30px; }
+
+
+
+
+/**
+ * RECENT POST
+ */
+
+.top-author .avatar { width: 85px; }
+
+
+
+/**
+ * RECOMMENDED POST
+ */
+
+.recommended .grid-list { grid-template-columns: repeat(6, 1fr); }
+
+
+
+/**
+ * NEWSLETTER
+ */
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsletter .section-title { margin-block-end: 0; }
+
+}
+
+
+
+
+
+/**
+* responsive for large than 1200px screen
+*/
+
+@media (min-width: 1200px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 9.2rem;
+  --fs-2: 6rem;
+  --fs-3: 2.6rem;
+  --fs-4: 2.4rem;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.section { margin-inline: 70px; }
+
+.has-scrollbar {
+  margin-inline: -70px;
+  padding-inline: 70px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 35px; }
+
+.card-tag {
+  --fs-9: 1.4rem;
+  padding: 4px 10px;
+}
+
+.grid-list { row-gap: 50px; }
+
+
+
+/**
+ * HERO
+ */
+
+.section.hero { padding-block: 50px 80px; }
+
+.hero-title { margin-block-end: 50px; }
+
+
+
+/**
+ * RECENT POST
+ */
+
+.top-author .avatar { width: 100px; }
+
+.recent .btn { margin-block-start: 70px; }
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer-top { grid-template-columns: 1fr 0.4fr 0.4fr 0.4fr 0.4fr; }
+
+.footer-brand {
+  grid-column: auto;
+  padding-inline-end: 100px;
+}
+
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header section" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <div class="nav__logo">
+          <div>SSR</div>
+          Groups
+        </div>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover:underline" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#recent" class="navbar-link hover:underline" data-nav-link>Recent Post</a>
+          </li>
+
+          
+
+        </ul>
+      </nav>
+
+      <div class="wrapper">
+
+        <button class="search-btn" aria-label="search" data-search-toggler>
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+          <span class="span">Search</span>
+        </button>
+
+        <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+          <span class="span one"></span>
+          <span class="span two"></span>
+          <span class="span three"></span>
+        </button>
+
+        <a href="#join" class="btn">Join</a>
+
+      </div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <!-- 
+    - #SEARCH BAR
+  -->
+
+  <div class="search-bar" data-search-bar>
+
+    <div class="input-wrapper">
+      <input type="search" name="search" placeholder="Search" class="input-field">
+
+      <button class="search-close-btn" aria-label="close search bar" data-search-toggler>
+        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+
+    <p class="search-bar-text">Please enter at least 3 characters</p>
+
+  </div>
+
+  <div class="overlay" data-overlay data-search-toggler></div>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="home">
+        <div class="container">
+
+          <h1 class="h1 hero-title">
+            <strong class="strong">Welcome,to our Blog.</strong> See our thoughts, stories and ideas.
+          </h1>
+
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURED POST
+      -->
+
+      <section class="section featured" aria-label="featured post" id="recent">
+        <div class="container">
+
+          <p class="section-subtitle">
+            Get started with our <strong class="strong">best stories</strong>
+          </p>
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                  <img src="img/f1.jpg" width="500" height="600" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/a1.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                   
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      AI and Machine Learning in IT
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    In today’s rapidly evolving technological landscape, Artificial Intelligence (AI) 
+                    and Machine Learning (ML) have emerged as some of the most transformative forces in IT. 
+                    These technologies are reshaping how businesses operate, how services are delivered, 
+                    and how complex problems are solved across industries. But how exactly are AI and ML 
+                    being applied in the world of IT? 
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                  <img src="img/f2.jpg" width="500" height="600" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/a2.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Cloud Computing Innovations
+
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    Cloud computing has revolutionized the way businesses and individuals access and use technology, 
+                    offering unprecedented flexibility, scalability, and cost-efficiency. Over the past few years, 
+                    a series of innovative advancements have made cloud computing even more powerful, enabling 
+                    businesses to stay competitive and agile in an ever-evolving digital world.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                  <img src="img/f3.jpg" width="500" height="600" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/a3.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Cybersecurity 
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    In today’s hyper-connected world, cybersecurity has become more critical than ever. As businesses and 
+                    individuals increasingly rely on digital platforms, the risks of cyberattacks, data breaches, and 
+                    online fraud grow exponentially. Cyber threats are becoming more sophisticated, and the consequences 
+                    of inadequate protection can be devastating—ranging from financial losses to reputational damage, 
+                    and in some cases, even national security risks.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                  <img src="img/f4.jpg" width="500" height="600" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/a4.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                   
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                
+
+                   
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      The Future of Internet of Things (IoT)
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    The Internet of Things (IoT) has already begun to transform industries, from healthcare and manufacturing 
+                    to transportation and agriculture. As more and more devices get connected to the internet, IoT is poised 
+                    to reshape not only business operations but also how we live, work, and interact with our environment. 
+                    In fact, the IoT market is expected to grow exponentially in the coming years, with billions of devices 
+                    expected to be connected by 2030.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                  <img src="img/f5.jpg" width="500" height="600" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/a5.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                 
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Emerging Technologies in IT
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    The world of Information Technology (IT) is evolving at an unprecedented rate. What was cutting-edge a 
+                    few years ago may already be outdated in today’s rapidly changing landscape. As businesses strive to stay 
+                    competitive and relevant, embracing emerging technologies is no longer a luxury—it’s a necessity. 
+                    From Artificial Intelligence (AI) and Quantum Computing to Blockchain and 5G networks, the 
+                    IT industry is undergoing a major transformation.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                  <img src="img/f6.jpg" width="500" height="600" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/a6.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      The Environmental Impact of IT 
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    As the world becomes increasingly digital, the Information Technology (IT) sector is at the forefront of 
+                    driving innovation and transforming industries. However, with this rapid advancement comes a significant 
+                    environmental cost. From the energy consumption of data centers to the e-waste generated by obsolete 
+                    electronics, the IT industry is contributing to environmental challenges that demand urgent attention.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #RECENT POST
+      -->
+
+      <section class="section recent" aria-label="recent post">
+        <div class="container">
+
+          <div class="title-wrapper">
+
+            <h2 class="h2 section-title">
+              See what we’ve <strong class="strong">IDEA'S</strong>
+            </h2>
+               
+            
+     
+      
+            <div class="top-author">
+              <ul class="avatar-list">
+
+                <li class="avatar-item">
+                  <a href="#" class="avatar large img-holder" style="--width: 100; --height: 100;">
+                    <img src="img/p9.svg" width="100" height="100"  class="img-cover">
+                  </a>
+                </li>
+
+                <li class="avatar-item">
+                  <a href="#" class="avatar large img-holder" style="--width: 100; --height: 100;">
+                    <img src="img/p8.svg" width="100" height="100"  class="img-cover">
+                  </a>
+                </li>
+
+                <li class="avatar-item">
+                  <a href="#" class="avatar large img-holder" style="--width: 100; --height: 100;">
+                    <img src="img/p3.svg"100" height="100"  class="img-cover">
+                  </a>
+                </li>
+
+                <li class="avatar-item">
+                  <a href="#" class="avatar large img-holder" style="--width: 100; --height: 100;">
+                    <img src="img/p7.svg" width="100" height="100"  class="img-cover">
+                  </a>
+                </li>
+
+                <li class="avatar-item">
+                  <a href="#" class="avatar large img-holder" style="--width: 100; --height: 100;">
+                    <img src="img/a2.svg" width="100" height="100"  class="img-cover">
+                  </a>
+                </li>
+
+              </ul>
+
+              <span class="span">Let's See</span>
+            </div>
+            
+          </div>
+          
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="img/r1.jpg" width="550" height="660" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p1.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li>
+                      <a href="#" class="card-tag">Lifestyle</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">Health</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">People</a>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Tech Innovations Transforming Healthcare: From Telemedicine to Wearable Devices
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    The healthcare industry is undergoing a digital transformation fueled by groundbreaking 
+                    technological innovations that are reshaping patient care, improving outcomes, and enhancing 
+                    operational efficiency. From telemedicine revolutionizing access to healthcare services to 
+                    wearable devices empowering individuals to monitor their health in real time, the intersection 
+                    of technology and healthcare is creating new opportunities for better, more personalized care.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="img/r2.jpg" width="550" height="660" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p7.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li>
+                      <a href="#" class="card-tag">AI</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">ML</a>
+                    </li>
+
+                    
+
+                  </ul>
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      How AI and Machine Learning Are Enhancing Cybersecurity
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    As cyber threats grow increasingly sophisticated, traditional cybersecurity methods are 
+                    often struggling to keep up. Enter Artificial Intelligence (AI) and Machine Learning 
+                    (ML)—technologies that are revolutionizing the way organizations protect their networks, 
+                    data, and systems from malicious attacks. By leveraging AI and ML, cybersecurity solutions 
+                    can become more adaptive, intelligent, and capable of identifying and mitigating threats in real time.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="img/r3.jpg" width="550" height="660" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p3.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+
+                  
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li>
+                      <a href="#" class="card-tag">IOT</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">Smart Home</a>
+                    </li>
+
+                    
+
+                  </ul>
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Tech Solutions for Smart Homes
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    Smart homes are no longer a futuristic concept; they are rapidly becoming an integral part of everyday life, 
+                    offering convenience, energy efficiency, and enhanced security. With the rise of IoT (Internet of Things) 
+                    and AI (Artificial Intelligence) technologies, the concept of a smart home has evolved beyond just smart 
+                    speakers and lighting. Today, homes can be equipped with a wide range of interconnected devices that optimize 
+                    everything from energy usage to security systems, providing a seamless and more personalized living experience.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="img/r4.jpg" width="550" height="660" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p8.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li>
+                      <a href="#" class="card-tag">Data</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">Security</a>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Is Your Data Safe? The Importance of Encryption in the Digital Age
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    In today’s interconnected world, data is the lifeblood of virtually every business, 
+                    individual, and organization. From personal emails and online banking to corporate 
+                    transactions and healthcare records, data is exchanged and stored constantly. However, 
+                    with this vast amount of digital information comes an ever-increasing risk of 
+                    cyberattacks, data breaches, and unauthorized access.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="img/r5.jpg" width="550" height="660" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p9.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li>
+                      <a href="#" class="card-tag">Technology</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">Remote Work</a>
+                    </li>
+
+                   
+
+                  </ul>
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      Tech-Driven Solutions for Managing Remote Teams
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    As the world continues to adapt to the post-pandemic landscape, remote work has evolved from a 
+                    temporary solution to a permanent feature for many businesses. With teams spread across different 
+                    time zones, regions, and even continents, managing remote workers has become both a challenge and 
+                    an opportunity. The key to success lies in technology—the right tools can bridge gaps, foster 
+                    collaboration, and streamline operations, ensuring that remote teams are productive, engaged, 
+                    and cohesive.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                  <img src="img/r6.jpg" width="550" height="660" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p6.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li>
+                      <a href="#" class="card-tag">Jobs</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">Service</a>
+                    </li>
+
+                    <li>
+                      <a href="#" class="card-tag">AI</a>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h4">
+                    <a href="#" class="card-title hover:underline">
+                      AI in Customer Service: The Future of Chatbots and Virtual Assistants
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    The world of customer service is evolving rapidly, driven by innovations in Artificial Intelligence (AI). 
+                    Today, AI-powered chatbots and virtual assistants are reshaping how businesses interact with customers, 
+                    providing faster, more efficient, and personalized experiences. This transformation is not only changing 
+                    the way companies handle customer queries but is also setting new standards for service expectations in the 
+                    digital age.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn">Load more</button>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #RECOMMENDED POST
+      -->
+
+      <section class="section recommended" aria-label="recommended post">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <strong class="strong">News</strong>
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                  <img src="img/n1.jpg" width="300" height="360" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p10.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5">
+                    <a href="#" class="card-title hover:underline">
+                      5G Connectivity Expands, Unlocking New IT Opportunities
+                    </a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                  <img src="img/n2.jpg" width="300" height="360" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p11.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5">
+                    <a href="#" class="card-title hover:underline">
+                      Blockchain in IT: Beyond Cryptocurrencies
+                    </a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                  <img src="img/n3.jpg" width="300" height="360" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p12.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5">
+                    <a href="#" class="card-title hover:underline">
+                      The Rise of Quantum Computing: Transforming IT Capabilities
+                    </a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                  <img src="img/n4.jpg" width="300" height="360" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p13.svg" width="100" height="100" loading="lazy"
+                          class="img-cover">
+                      </a>
+                    </li>
+
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5">
+                    <a href="#" class="card-title hover:underline">
+                      How DevOps is Changing the Software Development Lifecycle
+                    </a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                  <img src="img/n5.jpg" width="300" height="360" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p14.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5">
+                    <a href="#" class="card-title hover:underline">
+                      Digital Transformation in Finance: How Fintech Is Changing the Industry
+                    </a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                  <img src="img/n6.jpg" width="300" height="360" loading="lazy"
+                     class="img-cover">
+
+                  <ul class="avatar-list absolute">
+
+                    <li class="avatar-item">
+                      <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                        <img src="img/p15.svg" width="100" height="100" loading="lazy" 
+                          class="img-cover">
+                      </a>
+                    </li>
+
+                  </ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5">
+                    <a href="#" class="card-title hover:underline">
+                      How to Start a Career in IT: Tips for Beginners and Industry Insights
+                    </a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="section newsletter" id="join">
+
+        <h2 class="h2 section-title">
+          Subscribe to <strong class="strong">new posts</strong>
+        </h2>
+
+        <form action="" class="newsletter-form">
+          <input type="email" name="email_address" placeholder="Your email address" required class="email-field">
+
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top section">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <div class="nav__logo">
+              <div>SSR</div>
+              Groups
+            </div>
+          </a>
+
+          <p class="footer-text">
+            INNOVATE TO SUCCEED
+          </p>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h5">Social</p>
+          </li>
+
+          <li class="footer-list-item">
+            <ion-icon name="mail-outline"></ion-icon>
+
+            <a href="mailto:ssrgroups01@gmail.com" class="footer-link hover:underline">Gmail</a>
+          </li>
+
+          <li class="footer-list-item">
+            <ion-icon name="logo-linkedin"></ion-icon>
+
+            <a href="#" class="footer-link hover:underline">Linkedin </a>
+          </li>
+
+          <li class="footer-list-item">
+            <ion-icon name="logo-google"></ion-icon>
+
+            <a href="#" class="footer-link hover:underline">Gmail</a>
+          </li>
+
+          
+
+         
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h5">About</p>
+          </li>
+
+          <li>
+            <a href="https://ssrgroups.netlify.app/" class="footer-link hover:underline">Home</a>
+          </li>
+
+          <li>
+            <a href="https://ssrgroups.netlify.app/" class="footer-link hover:underline">About us</a>
+          </li>
+
+          <li>
+            <a href="https://ssrgroups.netlify.app/" class="footer-link hover:underline">Industries</a>
+          </li>
+
+          <li><i class="ion-ios-arrow-forward"></i> <a href="#privacy" class="footer-link hover:underline   popup-button" data-target="#popup-secondary" id="privacy"> Privacy Policy</a></li>
+          <div class="popup" id="popup-secondary">
+              <div class="popup-overlay popup-button" data-target="#popup-secondary"></div>
+              <div class="popup-inner">
+                  <h2>Privacy Policy</h2>
+                  <hr style="background-color: white;">
+                  <p>At SSR Groups, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our software, services, and website.</p>
+                  <h3>Information We Collect:</h3>
+                  <h3>Personal Information: </h3>
+                  <p> Name, email address, billing details, and any other information you provide when registering or using our services.  </p>
+                  <h3>   Usage Data:   </h3>
+                  <p> This includes details about your usage of our software, device information, and browsing activities, which we collect using cookies and other tracking technologies.    </p>
+                  <h3>How We Use Your Data:    </h3>
+                  <p> To provide and enhance the functionality of our software and services.<br>
+                      For customer support and communications regarding product updates.<br>
+                     
+                  </p>
+                  <h3> Your Rights: </h3>
+                  <p> You have the right to access, correct, or delete your personal data at any time. </p>
+                  <p> For more information or any questions about your privacy, please mail to us. <a href="mailto:ssrgroups01@gmail.com">Click Here</a></p>
+                 
+                 
+              
+                
+                  <button class="button popup-button" data-target="#popup-secondary">Close</button>
+              </div>
+          </div>
+         
+         
+
+
+         
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h5">Useful Links</p>
+          </li>
+
+          <li>
+            <a href="https://ssrgroups.netlify.app/" class="footer-link hover:underline">Our Brand</a>
+          </li>
+
+          <li>
+            <a href="index.html" class="footer-link hover:underline">Blog & News</a>
+          </li>
+          <li>
+            <a href="https://ssrgroups.netlify.app/" class="footer-link hover:underline">Our Services</a>
+          </li>
+
+          <li>
+             <a href="#terms & Conditions"   class="footer-link hover:underline  popup-button" data-target="#popup-main" id="terms & Conditions">Terms & condition</a>
+            <div class="popup" id="popup-main">
+                <div class="popup-overlay popup-button" data-target="#popup-main"></div>
+                <div class="popup-inner">
+                    <h2>Terms and Conditions</h2>
+                    <hr style="background-color: white;">
+                    <h3>Acceptance of Terms</h3>
+                    <p>By using the Website, you agree to these Terms, which may be updated from time to time. We encourage you to review these Terms periodically for any changes.</p>
+                    <h3> Intellectual Property</h3>
+                    <p>All content, materials, software, and trademarks on the Website are owned by SSR Groups or its licensors and are protected by intellectual property laws. You may not copy, reproduce, distribute, or create derivative works based on the Website or its content without our express written permission.</p>
+                    <h3>Use of Website </h3>
+                    <p>You agree to use the Website only for lawful purposes and in accordance with these Terms. You may not use the Website in any way that could damage, disable, overburden, or impair the Website or interfere with any other party’s use of the Website.</p>
+                    <h3>Services</h3>
+                    <p> SSR Groups provides various software products and services through the Website, which may include downloadable software, subscriptions, or access to online tools. All Services are provided subject to these Terms and any additional terms specific to the Service. </p>
+                    <h3>Termination   </h3>
+                    <p>We may suspend or terminate your access to the Website at any time, without notice, for any reason, including for violations of these Terms.</p>
+                    <h3> Changes to Terms  </h3>
+                    <p>SSR Groups reserves the right to modify or update these Terms at any time. Any changes will be posted on this page with the updated date. Your continued use of the Website after changes are posted constitutes your acceptance of the modified Terms.    </p>
+                    <button  class="button popup-button" data-target="#popup-main"  style="color: white;"> Close</button>
+                </div>
+           
+          </li>
+
+         
+
+        </ul>
+
+       
+
+      </div>
+
+      <div class="section footer-bottom">
+
+        <p class="copyright">
+         
+          Copyright &copy; 2024 <a href="https://ssrgroups.netlify.app/" class="copyright-link hover:underline">SSR Groups</a>. All Rights Reserved
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script>
+    'use strict';
+
+
+
+/**
+ * add event on element
+ */
+
+const addEventOnElem = function (elem, type, callback) {
+  if (elem.length > 1) {
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].addEventListener(type, callback);
+    }
+  } else {
+    elem.addEventListener(type, callback);
+  }
+}
+
+
+
+/**
+ * navbar toggle
+ */
+
+const navbar = document.querySelector("[data-navbar]");
+const navbarLinks = document.querySelectorAll("[data-nav-link]");
+const navToggler = document.querySelector("[data-nav-toggler]");
+
+const toggleNavbar = function () {
+  navbar.classList.toggle("active");
+  this.classList.toggle("active");
+}
+
+addEventOnElem(navToggler, "click", toggleNavbar);
+
+const closeNavbar = function () {
+  navbar.classList.remove("active");
+  navToggler.classList.remove("active");
+}
+
+addEventOnElem(navbarLinks, "click", closeNavbar);
+
+
+
+/**
+ * search bar toggle
+ */
+
+const searchBar = document.querySelector("[data-search-bar]");
+const searchTogglers = document.querySelectorAll("[data-search-toggler]");
+const overlay = document.querySelector("[data-overlay]");
+
+const toggleSearchBar = function () {
+  searchBar.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("active");
+}
+
+addEventOnElem(searchTogglers, "click", toggleSearchBar);
+
+
+window.onload = () => {
+    const popup_btns = document.querySelectorAll('.popup-button');
+  
+    popup_btns.forEach(button => {
+        button.addEventListener('click', e => {
+            const target = e.target.dataset.target;
+  
+            const popup_el = document.querySelector(target);
+            if (popup_el != null) {
+                popup_el.classList.toggle('is-active');
+            }
+        });
+    });
+  }
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

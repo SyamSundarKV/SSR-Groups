@@ -1,406 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSR  Marketing</title>
-  <!--favicon-->
-  <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <!--custom css link-->
-  <link rel="stylesheet" href="style.css">
-  <!--google font link-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Digital Marketing</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
-<body id="top">
-  <!--#HEADER-->
-  <header class="header" data-header>
-    <div class="container">
-      <a href="#" class="logo"><div class="nav__logo">
-        <div>SSR</div>
-        MARKETING
-      </div></a>
-      <nav class="navbar container" data-navbar>
-        <ul class="navbar-list">
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
-          </li>
-          <li>
-            <a href="#service" class="navbar-link" data-nav-link>Services</a>
-          </li>
-          <li>
-            <a href="#project" class="navbar-link" data-nav-link>Project</a>
-          </li>
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
-          </li>
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Contact Us</a>
-          </li>
-          <li>
-            <a href="#service" class="btn btn-primary">Get Started</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
-        <ion-icon name="menu-outline" class="open"></ion-icon>
-        <ion-icon name="close-outline" class="close"></ion-icon>
-      </button>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-bullhorn me-2"></i>Digital<span class="fs-5">Marketing</span></h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="project.html" class="nav-item nav-link">Project</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="blog.html" class="dropdown-item">Blog & News</a>
+                                
+                              
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <button type="button" class="btn text-secondary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                    <a href="#" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Get Start</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated zoomIn">We are available for marketing</h1>
+                            <p class="text-white pb-3 animated zoomIn"> Digital marketing is a strategic approach to promoting and growing your 
+                                business online using various digital channels and tools. It involves 
+                                reaching potential customers through targeted campaigns, engaging 
+                                content, and performance tracking to drive sales and brand awareness.</p>
+                            <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Get Started</a>
+                            <a href="mailto:ssrgroups01@gmail.com" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid" src="img/bg image.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">About Us</h6>
+                            <h2 class="mt-2"></h2>
+                        </div>
+                        <p class="mb-4"> At SSR Marketing, we specialize in delivering personalized digital marketing solutions that 
+                            are tailored to meet the unique needs of your business. Let us help you craft a strategy that brings 
+                            your brand to the forefront of your industry.<br>
+                            Digital marketing refers to all marketing efforts that use the internet or electronic devices to reach and 
+                            engage with potential customers. It involves a wide range of online activities that leverage digital 
+                            channels such as search engines, social media, email, websites, and mobile apps to promote products, 
+                            services, or brands.
+                            In today's digital age, traditional marketing methods like TV, radio, or print advertising have been 
+                            complemented—or in many cases, replaced—by online strategies that enable businesses to reach their 
+                            audience where they spend the most time: online.</p>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Customer Service</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Professional Staff</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Affordable Prices</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <button class="btn btn-primary rounded-pill px-4 me-3" >Follow us</button>
+                            <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fa fa-envelope"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about img.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">So What is Next?</h3>
+                        <small class="text-white">Are You Ready? Let's get to Work!</small>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="img/letterreading.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Services</h6>
+                    <h2 class="mt-2">Services We Provided</h2>
+                    <p>We offer a comprehensive range of digital marketing services designed to help businesses grow their online presence, increase brand visibility, and drive meaningful 
+                        engagement with their target audience. Our services are tailored to your specific business goals and are focused on delivering measurable results.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-comment fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">SEO Optimization</h5>
+                            <p>Our SEO services are designed to improve your website's organic ranking on search engines like Google. By optimizing your site’s on-page elements 
+                                (keywords, meta tags, content) and off-page factors (backlinks, social signals), we ensure that your business is visible to users who are actively 
+                                searching for your products or services.    </p>
+                        
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-desktop fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Digital Marketing</h5>
+                            <p>Digital marketing refers to the use of online platforms, tools, and strategies to promote products or services, build brand awareness, and engage 
+                                with a targeted audience. It leverages digital channels such as search engines, social media, email, and websites to connect with consumers, 
+                                drive traffic, and ultimately achieve business objectives.</p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-lightbulb fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Market Research </h5>
+                            <p>Market research is the process of collecting, analyzing, and interpreting data about a market, including information about the target audience, 
+                                competitors, and industry trends. Our market research services provide you with the insights you need to make informed decisions, reduce risks, 
+                                and capitalize on opportunities to grow your business.</p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-pen fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Content Marketing</h5>
+                            <p>Content is at the heart of a successful digital marketing strategy. We create high-quality, relevant, and engaging content that resonates with your 
+                                audience. This includes blogs, articles, videos, infographics, and more, all optimized for search engines and designed to encourage interaction.   </p>
+                         
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-envelope fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Email Marketing</h5>
+                            <p>Email marketing is one of the most effective ways to nurture leads and build lasting relationships with your customers. Our email marketing services 
+                                include designing compelling newsletters, creating personalized email campaigns, and analyzing performance to increase open rates, click-through rates, and conversions.</p>
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-wrench fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Marketing & Reporting</h5>
+                            <p>Marketing involves activities and strategies to promote and sell products or services. The primary goal is to understand and meet customer needs, create value, and build strong 
+                                customer relationships. Reports are systematic and well-organized documents that provide information, analysis, and insights on specific topics.</p>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Portfolio Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Projects</h6>
+                    <h2 class="mt-2">Recently Launched Projects</h2>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="btn px-3 pe-4 active" data-filter="*">All</li>
+                            <li class="btn px-3 pe-4" data-filter=".first">Design</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/p1.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/p1.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>SEO Optimization</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Designing a better user experience</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/p2.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/p2.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Content Marketing</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">
+
+                                        Create content that appeals to their target audience.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/p3.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/p3.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Development</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">
+
+                                        marketing activity intended to increase demand for a product that appears to meet an evident market need.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/p4.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/p4.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Digital Marketing</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">
+
+                                        Marketing the products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/p5.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/p5.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Email Marketing</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">
+
+                                        Transform your email marketing into a high conversion channel along with 95% delivery rate.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/p6.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/p6.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Marketing & Reporting</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">
+
+                                        Gathering and analyzing marketing metrics to inform future marketing decisions, strategies, and performance.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+
+
+       
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4"><div class="nav__logo">
+                            <div>SSR</div>
+                           Marketing
+                          </div></h5>
+                        <p>“It’s not what you sell that matters as much as how you sell it!”</p>
+                       
+                        <div class="d-flex pt-2">
+                          
+                            <a class="btn btn-outline-light btn-social" href="mailto:ssrgroups01@gmail.com"><i class="fa fa-envelope"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-google"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">About</h5>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="service.html">Service</a>
+                        <a href="#privacy" class="btn btn-link   popup-button" data-target="#popup-secondary" id="privacy"> Privacy Policy</a>
+                        <div class="popup" id="popup-secondary">
+                            <div class="popup-overlay popup-button" data-target="#popup-secondary"></div>
+                            <div class="popup-inner">
+                                <h2>Privacy Policy</h2>
+                                <hr style="background-color: white;">
+                                <p>At SSR Groups, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our software, services, and website.</p>
+                                <h3>Information We Collect:</h3>
+                                <h3>Personal Information: </h3>
+                                <p> Name, email address, billing details, and any other information you provide when registering or using our services.  </p>
+                                <h3>   Usage Data:   </h3>
+                                <p> This includes details about your usage of our software, device information, and browsing activities, which we collect using cookies and other tracking technologies.    </p>
+                                <h3>How We Use Your Data:    </h3>
+                                <p> To provide and enhance the functionality of our software and services.<br>
+                                    For customer support and communications regarding product updates.<br>
+                                   
+                                </p>
+                                <h3> Your Rights: </h3>
+                                <p> You have the right to access, correct, or delete your personal data at any time. </p>
+                                <p> For more information or any questions about your privacy, please mail to us. <a href="mailto:ssrgroups01@gmail.com" style="color: orange;">Click Here</a></p>         
+                                <button class="button popup-button" data-target="#popup-secondary">Close</button>
+                            </div>
+                        </div>
+                      
+                       
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Useful Links</h5>
+                        <div class="row mb-4">
+
+                            <a class="btn btn-link" href="index.html">Our Brand</a>
+                            <a class="btn btn-link" href="blog.html">Blog & News</a>
+                       
+                            <a href="#terms & Conditions" class="btn btn-link  popup-button" data-target="#popup-main" id="terms & Conditions">Terms & Conditions</a>
+                            <div class="popup" id="popup-main">
+                                <div class="popup-overlay popup-button" data-target="#popup-main"></div>
+                                <div class="popup-inner">
+                                    <h2>Terms and Conditions</h2>
+                                    <hr style="background-color: white;">
+                                    <h3>Acceptance of Terms</h3>
+                                    <p>By using the Website, you agree to these Terms, which may be updated from time to time. We encourage you to review these Terms periodically for any changes.</p>
+                                    <h3> Intellectual Property</h3>
+                                    <p>All content, materials, software, and trademarks on the Website are owned by SSR Groups or its licensors and are protected by intellectual property laws. You may not copy, reproduce, distribute, or create derivative works based on the Website or its content without our express written permission.</p>
+                                    <h3>Use of Website </h3>
+                                    <p>You agree to use the Website only for lawful purposes and in accordance with these Terms. You may not use the Website in any way that could damage, disable, overburden, or impair the Website or interfere with any other party’s use of the Website.</p>
+                                    <h3>Services</h3>
+                                    <p> SSR Groups provides various software products and services through the Website, which may include downloadable software, subscriptions, or access to online tools. All Services are provided subject to these Terms and any additional terms specific to the Service. </p>
+                                    <h3>Termination   </h3>
+                                    <p>We may suspend or terminate your access to the Website at any time, without notice, for any reason, including for violations of these Terms.</p>
+                                    <h3> Changes to Terms  </h3>
+                                    <p>SSR Groups reserves the right to modify or update these Terms at any time. Any changes will be posted on this page with the updated date. Your continued use of the Website after changes are posted constitutes your acceptance of the modified Terms.    </p>
+                                    <button class="button popup-button" data-target="#popup-main"  style="color: white;"> Close</button>
+                                </div>
+                            </div>
+
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Subscribe</h5>
+                        <p>we would love to here from you</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            Copyright  &copy; <a class="border-bottom" href="https://ssrgroups.netlify.app/">SSR Groups</a>, All Right Reserved. 
+
+                           
+							
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
     </div>
-  </header>
-  <main>
-    <article>
-      <!--#HERO-->
-      <section class="section hero" id="home" aria-label="hero">
-        <div class="container">
-          <div class="hero-content">
-            <p class="hero-subtitle">SSR Marketing</p>
-            <h1 class="h1 hero-title">We are available for marketing</h1>
 
-            <p class="hero-text">
-              Digital marketing is a strategic approach to promoting and growing your 
-              business online using various digital channels and tools. It involves 
-              reaching potential customers through targeted campaigns, engaging 
-              content, and performance tracking to drive sales and brand awareness.
-            </p>
-            <a href="#service" class="btn btn-primary">Get Started</a>
-          </div>
-          <figure class="hero-banner">
-            <img src="./assets/images/hero-banner.png" width="720" height="673" alt="hero banner" class="w-100">
-          </figure>
-        </div>
-      </section>
-  <!--#SERVICE-->
-      <section class="section service" id="service" aria-label="service">
-        <div class="container">
-          <h2 class="h2 section-title">Services We Provided</h2>
-          <p class="section-text">
-            We offer a comprehensive range of digital marketing services designed to help businesses grow their online presence, 
-            increase brand visibility, and drive meaningful engagement with their target audience. Our services are tailored to 
-            your specific business goals and are focused on delivering measurable results.
-          </p>
-          <ul class="grid-list">
-            <li>
-              <div class="service-card">
-                <div class="card-icon" style="background-color: #13c4a1">
-                  <ion-icon name="chatbox"></ion-icon>
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">SEO Optimization</a>
-                </h3>
-                <p class="card-text">
-                  Our SEO services are designed to improve your website's organic ranking on search engines like Google. 
-                  By optimizing your site’s on-page elements (keywords, meta tags, content) and off-page factors 
-                  (backlinks, social signals), we ensure that your business is visible to users who are actively 
-                  searching for your products or services.<br><br>
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="service-card">
-                <div class="card-icon" style="background-color: #6610f2">
-                  <ion-icon name="desktop"></ion-icon>
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">Digital Marketing</a>
-                </h3>
-                <p class="card-text">
-                  Digital marketing refers to the use of online platforms, tools, and strategies to promote products 
-                  or services, build brand awareness, and engage with a targeted audience. It leverages digital 
-                  channels such as search engines, social media, email, and websites to connect with consumers, 
-                  drive traffic, and ultimately achieve business objectives.<br><br>
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="service-card">
-                <div class="card-icon" style="background-color: #ffb700">
-                  <ion-icon name="bulb"></ion-icon>
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">Market Research</a>
-                </h3>
-                <p class="card-text">
-                  Market research is the process of collecting, analyzing, and interpreting data about a market, including 
-                  information about the target audience, competitors, and industry trends. Our market research services 
-                  provide you with the insights you need to make informed decisions, reduce risks, and capitalize on 
-                  opportunities to grow your business.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="service-card">
-                <div class="card-icon" style="background-color: #fc3549">
-                  <ion-icon name="book-outline"></ion-icon>
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">Content Marketing</a>
-                </h3>
-                <p class="card-text">
-                  Content is at the heart of a successful digital marketing strategy. We create high-quality, 
-                  relevant, and engaging content that resonates with your audience. This includes blogs, 
-                  articles, videos, infographics, and more, all optimized for search engines and designed 
-                  to encourage interaction.<br><br>
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="service-card">
-                <div class="card-icon" style="background-color: #00d280">
-                  <ion-icon name="archive"></ion-icon>
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">Email Marketing</a>
-                </h3>
-                <p class="card-text">
-                  Email marketing is one of the most effective ways to nurture leads and build lasting 
-                  relationships with your customers. Our email marketing services include designing 
-                  compelling newsletters, creating personalized email campaigns, and analyzing 
-                  performance to increase open rates, click-through rates, and conversions.<br>
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="service-card">
-                <div class="card-icon" style="background-color: #ff612f">
-                  <ion-icon name="build"></ion-icon>
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">Marketing & Reporting</a>
-                </h3>
-                <p class="card-text">
-                  Marketing involves activities and strategies to promote and sell products or services. 
-                  The primary goal is to understand and meet customer needs, create value, and build 
-                  strong customer relationships.
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-                  Reports are systematic and well-organized documents that provide information, 
-                  analysis, and insights on specific topics.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <!--#PROJECT-->
-      <section class="section project" id="project" aria-label="project">
-        <div class="container">
-          <h2 class="h2 section-title">Our Recent Projects</h2>
-          <ul class="grid-list">
-            <li>
-              <div class="project-card">
-                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
-                  <img src="./assets/images/seo.jpg" width="510" height="700" loading="lazy"
-                    alt="seo" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-subtitle">SEO Optimization</p>
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Designing a better user experience</a>
-                  </h3>
-                 
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="project-card">
-                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
-                  <img src="./assets/images/digital marketing.jpg" width="510" height="700" loading="lazy"
-                    alt="digital marketing" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-subtitle">Digital Marketing</p>
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Marketing the products</a>
-                  </h3>
-                
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="project-card">
-                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
-                  <img src="./assets/images/content.jpg" width="510" height="700" loading="lazy"
-                    alt="content" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-subtitle">Content Marketing</p>
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Create content that appeals to their target audience.</a>
-                  </h3>
-                
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="project-card">
-                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
-                  <img src="./assets/images/email.jpg" width="510" height="700" loading="lazy"
-                    alt="Stuck with to-do list, I created a new app for" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-subtitle">Email Marketing</p>
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Transform your email marketing into a high conversion channel along with 95% delivery rate.</a>
-                  </h3>
-                
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="project-card">
-                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
-                  <img src="./assets/images/report.jpg" width="510" height="700" loading="lazy"
-                    alt="Examples of different types of sprints" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-subtitle">Marketing & Reporting</p>
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Gathering and analyzing marketing metrics to inform future marketing decisions, strategies, and performance.</a>
-                  </h3>
-                 
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="project-card">
-                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
-                  <img src="./assets/images/development.jpg" width="510" height="700" loading="lazy"
-                    alt="Redesigning the New York times app" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-subtitle">Development</p>
-                  <h3 class="h3">
-                    <a href="#" class="card-title">marketing activity intended to increase demand for a product that appears to meet an evident market need.</a>
-                  </h3>
-                 
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-
-
-
-
-
-
-
-
-      <!--#ABOUT -->
-      <section class="section about" id="about" aria-label="about">
-        <div class="container">
-          <div class="about-banner img-holder" style="--width: 720; --height: 960;">
-            <img src="./assets/images/about.jpg" width="720" height="960" loading="lazy" alt="about banner"
-              class="img-cover">
-            <button class="play-btn" aria-label="Play video">
-              <ion-icon name="play" aria-hidden="true"></ion-icon>
-            </button>
-          </div>
-          <div class="about-content">
-            <h2 class="h2 section-title">About Us</h2>
-            <p class="section-text">
-              At SSR Marketing, we specialize in delivering personalized digital marketing solutions that 
-              are tailored to meet the unique needs of your business. Let us help you craft a strategy that brings 
-              your brand to the forefront of your industry.
-            </p>
-            <h3 class="h3">Our Mission</h3>
-            <p class="section-text">
-              Digital marketing refers to all marketing efforts that use the internet or electronic devices to reach and 
-              engage with potential customers. It involves a wide range of online activities that leverage digital 
-              channels such as search engines, social media, email, websites, and mobile apps to promote products, 
-              services, or brands.<br>
-              In today's digital age, traditional marketing methods like TV, radio, or print advertising have been 
-              complemented—or in many cases, replaced—by online strategies that enable businesses to reach their 
-              audience where they spend the most time: online.
-            </p>
-          </div>
-        </div>
-      </section>
-      <!--#CTA-->
-      <section class="section cta" aria-label="cta" style="background-image: url('./assets/images/cta-bg.jpg')">
-        <div class="container">
-          <p class="cta-subtitle">So What is Next?</p>
-          <h2 class="h2 section-title">Are You Ready? Let's get to Work!</h2>
-          <a href="index.html" class="btn btn-primary" >Get Started</a>
-        </div>
-      </section>
-       <!--#CONTACT-->
-       <section class="section contact" id="contact" aria-label="contact">
-        <div class="container">
-          <h2 class="h2 section-title">Let's Contact With Us</h2>
-          <form action="" class="contact-form">
-            <div class="input-wrapper">
-              <input type="text" name="name" aria-label="name" placeholder="Your name" required class="input-field">
-              <input type="email" name="email_address" aria-label="email" placeholder="Email address" required
-                class="input-field">
-            </div>
-            <div class="input-wrapper">
-              <input type="text" name="subject" aria-label="subject" placeholder="Subject" class="input-field">
-              <input type="number" name="phone" aria-label="phone" placeholder="Phone number" class="input-field">
-            </div>
-            <textarea name="message" aria-label="message" placeholder="Your message..." required
-              class="input-field"></textarea>
-            <div class="checkbox-wrapper">
-              <input type="checkbox" name="terms_and_policy" id="terms" required class="checkbox">
-              <label for="terms" class="label">
-                Accept <a href="#" class="label-link">Terms of Services</a> and <a href="#" class="label-link">Privacy
-                  Policy</a>
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary" ><a href="mailto:ssrgroups01@gmail.com"  style="color: white;">  Send Message  </a>   </button>
-          </form>
-          <ul class="contact-list">
-            <li class="contact-item">
-              <div class="contact-card">
-                <div class="card-icon">
-                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-                </div>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Mail Here</h3>
-                  <a href="mailto:ssrgroups01@gmail.com" class="card-link">ssrgroups01@gmail.com</a>
-                </div>
-              </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-card">
-                <div class="card-icon">
-                  <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
-                </div>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Visit Here</h3>
-                  <address class="card-address">
-                    Vishakapatnam, Andhra Pradesh.
-                  </address>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </article>
-  </main>
-  <!--#FOOTER-->
-  <footer class="footer">
-    <div class="container">
-      <p class="copyright">
-        Copyright &copy; 2024 <a href="https://ssrgroups.netlify.app/">SSR Groups</a>. All Rights Reserved
-      </p>
-    </div>
-  </footer>
-  <!--#BACK TO TOP-->
-  <a href="#top" aria-label="back to top" data-back-top-btn class="back-top-btn">
-    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
-  </a>
-  <!--custom js link-->
-  <script src="script.js" defer></script>
-  <!--ionicon link-->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
