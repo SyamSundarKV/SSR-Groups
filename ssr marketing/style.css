@@ -692,11 +692,14 @@ textarea.input-field {
 \*-----------------------------------*/
 
 .footer {
+ 
   background-color: var(--white-2);
   padding-block: 20px;
 }
 
 .copyright {
+  display: flex;
+  align-items: center;
   font-size: var(--fs-6);
   text-align: center;
 }

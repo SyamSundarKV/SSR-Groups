@@ -213,7 +213,9 @@ body {
   padding: 10px 20px;
   border-radius: var(--radius-5);
   overflow: hidden;
+ 
 }
+
 
 .has-before,
 .has-after {
@@ -234,10 +236,12 @@ body {
   border-radius: inherit;
   transform: translateX(-100%);
   transition: var(--transition-2);
+
 }
 
 .btn:is(:hover, :focus)::before { 
   transform: translateX(0);
+ 
 }
 
 .img-holder {
@@ -311,6 +315,16 @@ body {
   gap: 15px;
 }
 
+.header-actions .btn.has-before{
+ transition: all 0.2s ease-out;
+}
+
+.header-actions .btn.has-before:hover{
+  transform: scale(1.05);
+}
+
+
+
 .header-action-btn,
 .nav-close-btn {
   position: relative;
@@ -319,8 +333,13 @@ body {
   transition: var(--transition-1);
 }
 
+
+
+
+
 .header-action-btn:is(:hover, :focus) { 
   color: var(--kappel); 
+  
 }
 
 .header-action-btn .btn-badge {
@@ -335,6 +354,8 @@ body {
   height: 20px;
   border-radius: var(--radius-circle);
 }
+
+
 
 .navbar {
   position: fixed;
@@ -363,12 +384,19 @@ body {
   box-shadow: var(--shadow-2);
   padding: 8px;
   border-radius: var(--radius-circle);
+ 
 }
 
 .nav-close-btn:is(:hover, :focus) {
   background-color: var(--kappel);
   color: var(--white);
+ 
 }
+
+
+
+
+
 
 .navbar-list { 
   padding: 15px 20px; 
@@ -382,10 +410,12 @@ body {
   padding-block: 8px;
   font-weight: var(--fw-500);
   transition: var(--transition-1);
+  transition: all 0.2s ease-out;
 }
 
 .navbar-link:is(:hover, :focus) { 
-  color: var(--kappel); 
+  color: var(--kappel);
+  transform: scale(1.05); 
 }
 
 .overlay {
@@ -445,6 +475,10 @@ body {
 
 .hero .btn { 
   margin-inline: auto; 
+  transition: all 0.2s ease-out;
+}
+.hero .btn:hover {
+  transform: scale(1.05);
 }
 
 .hero-banner {
@@ -482,8 +516,11 @@ body {
   padding: 50px 30px;
   text-align: center;
   border-radius: var(--radius-5);
+  transition: all 0.2s ease-out;
 }
-
+.category-card:hover {
+  transform: scale(1.05);
+}
 .category-card .card-icon {
   background-color: hsla(var(--color), 0.1);
   width: 80px;
@@ -573,6 +610,10 @@ body {
   background-color: var(--white);
   border-radius: var(--radius-5);
   overflow: hidden;
+  transition: all 0.2s ease-out;
+}
+.course-card:hover {
+  transform: scale(1.05);
 }
 
 .course-card .img-cover { 
@@ -675,6 +716,10 @@ body {
 .course .btn {
   margin-inline: auto;
   margin-block-start: 60px;
+  transition: all 0.2s ease-out;
+}
+.course .btn:hover {
+  transform: scale(1.05);
 }
 /*-----------------------------------*\
   #FOOTER
@@ -707,10 +752,12 @@ body {
 
 .footer-link { 
   transition: var(--transition-1); 
+  transition: all 0.2s ease-out;
 }
 
 .footer-link:is(:hover, :focus) { 
   color: var(--kappel); 
+  transform: scale(1.05);
 }
 
 .footer-list-title {
@@ -739,6 +786,10 @@ body {
 .newsletter-form .btn {
   min-width: 100%;
   justify-content: center;
+  transition: all 0.2s ease-out;
+}
+.newsletter-form .btn:hover {
+  transform: scale(1.05);
 }
 
 .social-list {
